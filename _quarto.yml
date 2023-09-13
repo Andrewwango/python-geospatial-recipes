@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Notebooks"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: 00_sample.ipynb
+        text: Sample notebook
+      - href: 01_Table_Join.ipynb
+        text: "1. Vector table join"
+      - href: 02_Spatial_Join.ipynb
+        text: "2. Vector spatial join"
+      - href: 05_Raster_Resampling.ipynb
+        text: "5. Raster resampling"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

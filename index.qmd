@@ -1,0 +1,76 @@
+---
+title: "Processing Geospatial Data at Scale"
+---
+
+Demo for _Processing Geospatial Data at Scale_ as part of Data Engineering Community of Practice Research Initiative.
+
+## Introduction
+
+We demonstrate a number of geospatial processing tasks with larger datasets (click on link to view demo):
+
+1. [Vector table join](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/01_Table_Join.html) - joining vector and table
+2. [Vector spatial join](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/02_Spatial_Join.html) - map matching by nearest vectors
+3. [Spatial vector aggregation](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/00_sample.html) - aggregate vectors by polygons
+4. [Raster aggregation](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/00_sample.html) - calculate zonal statistics 
+5. [Raster resampling](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/05_Raster_Resampling.html) - interpolation
+6. [Geospatial classification](https://kainossoftwareltd.github.io/data-eng-cop-geospatial-demo/00_sample.html) 
+
+For each task we show:
+
+- Data loading in Databricks
+- Data processing
+- Map visualisation to HTML
+
+## Overview
+
+### 1. Vector table join
+
+Here, you join a spatial table with vector geometry with tabular data ([example](https://www.qgistutorials.com/en/docs/3/performing_table_joins.html)).
+
+- **Task**: Plot a map of number of total internet users per UK authority.
+- **Dataset**: [internet users by NUTS region](https://www.ons.gov.uk/file?uri=/businessindustryandtrade/itandinternetindustry/datasets/internetusers/current/internetusers2020.xlsx), [UK authority polygon shapefiles](https://geoportal.statistics.gov.uk/datasets/e204895bba5646a486da29b5ed382db1_0/explore) and [NUTS code conversions](https://geoportal.statistics.gov.uk/datasets/ons::local-authority-district-december-2016-to-nuts3-to-nuts2-to-nuts1-january-2018-lookup-in-united-kingdom-1/explore).
+- **Tech stack**: `geopandas` and `folium`
+- **Notebook**: [01_Table_Join.ipynb](01_Table_Join.ipynb)
+
+### 2. Vector spatial join
+
+Here, you add a column to a vector layer from another vector layer by joining on nearest geometries ([example](https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html)).
+
+- **Task**: For given locations, show attributes of the nearest road on the UK road network.
+- **Dataset**: [Ordnance Survey Open Roads](https://beta.ordnancesurvey.co.uk/products/os-open-roads)
+- **Tech stack**: `geopandas`, `shapely` and `folium`
+- **Notebook**: [02_Spatial_Join.ipynb](02_Spatial_Join.ipynb)
+
+### 3. Spatial vector aggregation
+
+Here, you aggregate a vector layer (e.g. of points or lines) by another vector layer of polygons. This is another form of vector spatial join.
+
+- **Task**: Show a map of total length of road network per London borough.
+- **Dataset**: [UK authority polygon shapefiles](https://geoportal.statistics.gov.uk/datasets/e204895bba5646a486da29b5ed382db1_0/explore) and [Ordnance Survey Open Roads](https://beta.ordnancesurvey.co.uk/products/os-open-roads)
+- **Tech stack**: `geopandas`, `shapely` and `folium`
+- **Notebook**: 
+
+### 4. Raster aggregation
+
+Here, you aggregate a raster layer (such as pixels such as images or gridded data such as elevation data) over polygons ([example](https://www.qgistutorials.com/en/docs/3/sampling_raster_data.html)).
+
+- **Task**:
+- **Dataset**:
+- **Tech stack**: `rasterframe`
+- **Notebook**: 
+
+### 5. Raster resampling/interpolation
+
+Here, you resample a raster at locations determined by a new grid, which may require interpolation of the original raster grid.
+
+- **Task**: Resample raster of UK population to a new grid defined at a higher (~2.5x) resolution.
+- **Dataset**: UK gridded 2000 population density data from [CIESIN](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4)
+- **Tech stack**: `rasterio`, `scipy` and `folium`
+- **Notebook**: [05_Raster_Resampling.ipynb](05_Raster_Resampling.ipynb)
+
+### 6. Geospatial classification
+
+- **Task**:
+- **Dataset**:
+- **Tech stack**:
+- **Notebook**: 

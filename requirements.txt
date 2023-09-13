@@ -1,0 +1,4 @@
+openpyxl
+geopandas
+folium
+jupyterlab
